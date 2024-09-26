@@ -37,7 +37,7 @@ def remove_from_cart(user_id, product_id):
         amount = request.json.get('amount')
         cart[product_id]["amount"] -= amount
 
-        response = requests.get(f'http://https://product-service-zgf8.onrender.com/products/{product_id}')
+        response = requests.get(f'https://product-service-zgf8.onrender.com/products/{product_id}')
         new_product = response.json()
 
         changed_amount = new_product['product']['amount'] + amount
